@@ -1,0 +1,15 @@
+1) Run npm init -y to create package.json (-y loads in all default values for the properties)
+2) In package.json, change update "main": property to server.js  
+3) Run npm i express ejs express-ejs-layouts, this will create a package-lock.json
+4) Run npm i --save-dev nodemon (nodemon is dev dependancy because it's not needed for the production bulid
+5) Creating scripts for running server:
+    - "scripts": {
+        "start": "node server.js" -- starts server in production enviroment WITHOUT nodemon
+        "devStart": "nodemon server.js" -- auto refresh server everytime a change is made
+        "
+    }
+
+6) See code in server JS to import express. Create public and views folder
+7) Run npm run devStart to initialise a server for development
+8) Create models, and routes folder
+9) Create index.js in routes folder and create a router for the root. Link this router to the server.js file
