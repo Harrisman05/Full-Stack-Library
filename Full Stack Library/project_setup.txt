@@ -13,3 +13,9 @@
 7) Run npm run devStart to initialise a server for development
 8) Create models, and routes folder
 9) Create index.js in routes folder and create a router for the root. Link this router to the server.js file
+10) Create layouts folder within view folder and create a layout.ejs file. This will contain boilerplate HTML which will be the same for all pages in the application (see layout file)
+11) Create index.ejs file and render it on the root directory. As app.set('layout', 'layouts/layout'); is set, the layout file will always be used by the server and the body section will change 
+12) Install MongoDB and npm i mongoose to be able to easily connect to database in the app
+13) Setup mongoose connection in server.js
+14) Download dotenv as dev dependancy npm i --save-dev dotenv
+15) In server.js check if the app is running in development or production environment
