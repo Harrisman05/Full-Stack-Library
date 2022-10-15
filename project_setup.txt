@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=qj2oDkvc4dQ&t=741s&ab_channel=WebDevSimplified
+
 1) Run npm init -y to create package.json (-y loads in all default values for the properties)
 2) In package.json, change update "main": property to server.js  
 3) Run npm i express ejs express-ejs-layouts, this will create a package-lock.json
@@ -18,4 +20,5 @@
 12) Install MongoDB and npm i mongoose to be able to easily connect to database in the app
 13) Setup mongoose connection in server.js
 14) Download dotenv as dev dependancy npm i --save-dev dotenv
-15) In server.js check if the app is running in development or production environment
+15) In server.js create if statement to check if the app is running in development or production environment
+16) Deploy app on Railway and input DATABASE_URL enviroment variable and MongoDB Atlas user password into Railway

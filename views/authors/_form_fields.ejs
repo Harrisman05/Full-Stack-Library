@@ -1,0 +1,8 @@
+<!-- underscore used so developers know this is a partials folder. These form inputs will be used in update author as well, so code isn't duplicated here -->
+
+<label>Name</label>
+<input type="text" name="name" value="<%=author.name%>">
+
+<!-- input name attribute allows the server to access it (body.name) -->
+<!-- On the edit/update page, the author is already going to have a name, so author.name is used  -->
+<!-- = sign is used inside ejs tag to tell server to output text as HTML -->

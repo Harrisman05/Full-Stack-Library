@@ -1,0 +1,6 @@
+<h2>New Authors</h2>
+<form action="/authors" method="POST"> <!-- action is the url that the form goes to. Creating new user so this links to POST route on authors.js route-->
+    <%- include('_form_fields') %> <!-- importing form for use in creating/updating user -->
+    <a href="/authors">Cancel</a> <!-- Cancel button used, redirects us to authors page -->
+    <button type="submit">Create</button> <!-- type is submit so that this button will actually submit the info on the form-->
+</form>

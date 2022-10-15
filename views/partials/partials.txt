@@ -1,0 +1,1 @@
+Partials are to recreate reusable sections of the page which multiple views can use. This allows ejs files to be smaller as the partials are able to be imported
