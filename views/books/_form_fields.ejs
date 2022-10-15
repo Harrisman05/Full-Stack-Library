@@ -1,0 +1,12 @@
+<label>Title</label>
+<input type="text" name="name" value="<%=book.title %>">
+
+<!-- this will be a variable which will be looped through to create select field to loop through all available authors-->
+
+<label>Author</label>
+<% authors.forEach(author => { %>
+
+    <option label="<%= author.name %>" value="<% author.id %>">
+<% }) %> 
+
+TO COMPLETE https://www.youtube.com/watch?v=Zi2UwhpooF8&ab_channel=WebDevSimplified - 08:06

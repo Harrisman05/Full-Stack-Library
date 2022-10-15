@@ -9,7 +9,7 @@ const expressLayouts = require('express-ejs-layouts');
 app.use(express.urlencoded({extended: true})); // boilerplate code need to allow express to access body of html
 const indexRouter = require('./routes/index.js');
 const authorRouter = require('./routes/authors.js');
-
+const bookRouter = require('./routes/books');
 
 app.set('view engine', 'ejs'); // template engines are used so variables set by the server can be passed into the html file which is sent to the client
 
@@ -24,6 +24,7 @@ app.listen(process.env.PORT || 4000); // pull from environment variable for when
 
 app.use('/', indexRouter); // mounting index router to root
 app.use('/authors', authorRouter); // mounting author router to a /author root
+app.use('/books', bookRouter);
 
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL, { // env used as for development ENVIRONMENT we want to use local server but once deployed, we want to use an external server 
