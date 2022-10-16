@@ -22,3 +22,7 @@ https://www.youtube.com/watch?v=qj2oDkvc4dQ&t=741s&ab_channel=WebDevSimplified
 14) Download dotenv as dev dependancy npm i --save-dev dotenv
 15) In server.js create if statement to check if the app is running in development or production environment
 16) Deploy app on Railway and input DATABASE_URL enviroment variable and MongoDB Atlas user password into Railway
+
+Additional items:
+
+Installing npm i multer, for multipart form handling (uploading a file), multer is needed and enctype="multipart/form-data" attribute needs to be added to form to support this

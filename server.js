@@ -20,7 +20,9 @@ app.set('layout', 'layouts/layout'); // layouts are used to store layouts of a w
 app.use(expressLayouts); // allows us to use layouts. These layouts persist on EVERY PAGE
 app.use(express.static('public')); // where are the public files are, ejs, styles, browser javascript
 
-app.listen(process.env.PORT || 4000); // pull from environment variable for when the app is deployed, or 4000 is used for development environment
+app.listen(process.env.PORT || 4000, () => {
+    console.log("Listening on PORT 4000...");
+}); // pull from environment variable for when the app is deployed, or 4000 is used for development environment
 
 app.use('/', indexRouter); // mounting index router to root
 app.use('/authors', authorRouter); // mounting author router to a /author root
