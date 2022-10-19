@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 
-app.use(express.urlencoded({extended: true})); // boilerplate code need to allow express to access body of html
+app.use(express.urlencoded({limit:'5mb', extended: true})); // boilerplate code need to allow express to access body of html
 const indexRouter = require('./routes/index.js');
 const authorRouter = require('./routes/authors.js');
 const bookRouter = require('./routes/books');
