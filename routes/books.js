@@ -1,6 +1,6 @@
 const express = require("express");
 router = express.Router();
-const Book = require('../models/Book'); // importing book model so that route has access to it
+const Book = require('../models/book'); // importing book model so that route has access to it
 const Author = require("../models/author");
 const multer = require("multer");
 const path = require('path');
@@ -18,7 +18,28 @@ const upload = multer({
 
 router.get("/", async (req, res) => {
 
-    res.send('All books');
+    let query = Book.find();
+    if (req.query.title != null && req.query.title != '') {
+        query = query.regex('title', new RegExp(req.query.title, 'i'));
+    }
+
+    if (req.query.publishedBefore != null && req.query.publishedBefore != '') {
+       query = query.lte('publishDate', req.query.publishedBefore)
+    }
+
+    if (req.query.publishedAfter != null && req.query.publishedAfter != '') {
+       query = query.gte('publishDate', req.query.publishedAfter)
+    }
+
+    try {
+        const books = await query.exec();
+        res.render('books/index', {
+            books: books,
+            searchOptions: req.query
+        })
+    } catch {
+        res.redirect('/');
+    }
 
 });
 
@@ -50,7 +71,7 @@ router.post('/', upload.single('cover'), async (req, res) => { // async await us
         res.redirect('books');
     } catch {
 
-        if(book.coverImageName != null) {
+        if (book.coverImageName != null) {
             removeBookCover(book.coverImageName)
         }
 
@@ -64,7 +85,7 @@ function removeBookCover(fileName) {
         if (err) console.error(err);
     });
 }
- 
+
 async function renderNewPage(res, book, hasError = false) {
     try {
         const authors = await Author.find({});
